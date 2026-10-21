@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grandpa Disagrees</title>
+<meta name="description" content="Old rancher Frank breaks down the money mistakes keeping young people poor. Free calculators, episodes and Frank's honest picks.">
+<meta property="og:title" content="Grandpa Disagrees">
+<meta property="og:description" content="Money advice from an old rancher who's seen every mistake twice.">
+<meta property="og:image" content="img/frank_point.webp">
+<link rel="icon" href="img/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0c0d10;
+  --bg2: #121418;
+  --card: #16181d;
+  --card2: #1c1f25;
+  --line: #262a31;
+  --text: #eceae4;
+  --muted: #9a9ca3;
+  --gold: #e8b931;
+  --gold2: #f5d26b;
+  --red: #d8423a;
+  --yellow: var(--gold);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.6 Inter, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: Inter, system-ui, sans-serif; font-weight: 800; letter-spacing: -0.025em; }
+a { color: inherit; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+
+/* top bar */
+.bar { position: sticky; top: 0; z-index: 5; background: rgba(12, 13, 16, .82); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+.bar .wrap { display: flex; align-items: center; justify-content: space-between; height: 62px; }
+.logo { font-weight: 800; font-size: 18px; letter-spacing: -0.02em; text-decoration: none; }
+.logo span { color: var(--gold); }
+.bar nav a { margin-left: 26px; font-weight: 600; text-decoration: none; font-size: 14px; color: var(--muted); transition: color .15s; }
+.bar nav a:hover { color: var(--text); }
+
+/* hero */
+.hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--line);
+  background: radial-gradient(60% 80% at 78% 60%, rgba(232, 185, 49, .16), transparent 70%), var(--bg); }
+.hero .wrap { display: grid; grid-template-columns: 1.25fr 1fr; align-items: end; gap: 12px; padding-top: 72px; }
+.hero .eyebrow { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+.hero h1 { font-size: clamp(40px, 6.2vw, 68px); line-height: 1.02; margin: 0 0 20px; }
+.hero h1 .box { color: var(--gold); }
+.hero p { font-size: 18px; color: var(--muted); max-width: 480px; margin: 0 0 30px; }
+.hero .copy { padding-bottom: 80px; }
+.hero img { width: 100%; max-width: 340px; justify-self: center; display: block; margin-bottom: -4px; filter: drop-shadow(0 30px 40px rgba(0, 0, 0, .55)); }
+
+.btn {
+  display: inline-block; text-decoration: none; text-align: center;
+  font-weight: 700; font-size: 15px; padding: 13px 22px; border-radius: 10px;
+  background: var(--gold); color: #141414; border: 1px solid var(--gold);
+  transition: background .15s, transform .15s; cursor: pointer;
+}
+.btn:hover { background: var(--gold2); transform: translateY(-1px); }
+.btn.alt { background: transparent; color: var(--text); border-color: #3a3e46; }
+.btn.alt:hover { border-color: var(--text); }
+.btn.off { background: transparent; color: #6b6e75; border-color: var(--line); pointer-events: none; }
+.btns { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* sections */
+section { padding: 84px 0; }
+section.cream { background: var(--bg2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.head { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; flex-wrap: wrap; }
+.head h2 { font-size: clamp(28px, 4vw, 40px); margin: 0; line-height: 1.1; }
+.tag { font-size: 11px; font-weight: 700; letter-spacing: .14em; color: var(--gold); border: 1px solid rgba(232, 185, 49, .4); padding: 4px 10px; border-radius: 999px; }
+.sub { color: var(--muted); margin: 0 0 34px; max-width: 620px; }
+
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; }
+
+/* episodes */
+.eps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+.ep { text-decoration: none; overflow: hidden; display: block; transition: transform .2s, border-color .2s; }
+.ep:hover { transform: translateY(-3px); border-color: #3a3e46; }
+.ep img { width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; }
+.ep div { padding: 16px 18px 18px; }
+.ep h3 { margin: 0 0 4px; font-size: 18px; line-height: 1.3; }
+.ep small { color: var(--muted); font-size: 14px; }
+
+/* calculators */
+.calc { display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; margin-bottom: 26px; }
+.calc .in { padding: 28px; border-right: 1px solid var(--line); }
+.calc .out { padding: 28px; background: var(--card2); display: flex; flex-direction: column; }
+.calc h3 { margin: 0 0 22px; font-size: 21px; }
+label { display: block; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 16px; }
+label .row { display: flex; justify-content: space-between; }
+label output { color: var(--gold); }
+input[type=number] {
+  width: 100%; margin-top: 6px; padding: 11px 13px; font: 600 16px Inter, sans-serif;
+  border: 1px solid #30343c; border-radius: 9px; background: var(--bg); color: var(--text);
+}
+input[type=number]:focus { outline: none; border-color: var(--gold); }
+input[type=range] { width: 100%; margin-top: 10px; accent-color: var(--gold); }
+.big { font-weight: 800; letter-spacing: -0.03em; font-size: clamp(38px, 5vw, 52px); color: var(--gold); line-height: 1.05; margin: 4px 0; }
+.lbl { font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); font-weight: 600; }
+.lines { margin: 18px 0; }
+.lines div { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 14px; color: var(--muted); }
+.lines b { font-weight: 700; color: var(--text); white-space: nowrap; }
+.meter { height: 8px; background: #2a2d34; border-radius: 4px; overflow: hidden; margin: 10px 0 8px; }
+.meter i { display: block; height: 100%; transition: width .25s, background .25s; }
+.verdict { margin-top: auto; display: flex; gap: 12px; align-items: flex-start; border-left: 3px solid var(--gold); background: rgba(232, 185, 49, .07); border-radius: 0 10px 10px 0; padding: 14px 16px; font-size: 15px; }
+.verdict b { color: var(--gold); display: block; font-size: 11px; letter-spacing: .14em; margin-bottom: 2px; }
+.note { font-size: 12px; color: #6f727a; margin-top: -4px; }
+
+/* picks */
+.picks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.pick { padding: 24px; display: flex; flex-direction: column; transition: border-color .2s; }
+.pick:hover { border-color: #3a3e46; }
+.pick .ico { font-size: 26px; line-height: 1; margin-bottom: 14px; width: 48px; height: 48px; display: grid; place-items: center; background: var(--card2); border: 1px solid var(--line); border-radius: 12px; }
+.pick h3 { margin: 0 0 6px; font-size: 18px; }
+.pick .why { font-style: italic; color: var(--muted); margin: 0 0 20px; flex: 1; font-size: 15px; }
+.pick .btn { font-size: 14px; padding: 10px 14px; }
+
+/* course */
+.course { display: grid; grid-template-columns: auto 1fr; gap: 30px; align-items: center; padding: 34px;
+  background: linear-gradient(135deg, rgba(232, 185, 49, .12), transparent 60%), var(--card); }
+.course img { width: 160px; }
+.course h2 { font-size: clamp(26px, 4vw, 36px); margin: 0 0 8px; line-height: 1.1; }
+.course p { color: var(--muted); }
+.course ul { margin: 0 0 22px; padding-left: 20px; }
+.price { font-weight: 800; font-size: 28px; margin-right: 14px; color: var(--gold); }
+
+/* about */
+.about { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: center; }
+.about img { width: 100%; max-width: 240px; justify-self: center; filter: drop-shadow(0 24px 30px rgba(0, 0, 0, .5)); }
+.about p { font-size: 17px; color: var(--muted); }
+.quote { font-weight: 700; font-size: 22px; line-height: 1.35; color: var(--text) !important; border-left: 3px solid var(--gold); padding-left: 18px; margin: 0 0 18px; letter-spacing: -0.01em; }
+
+/* contact */
+.contacts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.contact { padding: 22px 24px; text-decoration: none; display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; column-gap: 16px; align-items: center; transition: border-color .2s, transform .2s; min-width: 0; }
+.contact:hover { border-color: var(--gold); transform: translateY(-2px); }
+.contact .ico { grid-row: span 2; font-size: 22px; width: 48px; height: 48px; display: grid; place-items: center; background: var(--card2); border: 1px solid var(--line); border-radius: 12px; }
+.contact b { font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.contact span:last-child { color: var(--text); font-weight: 600; font-size: 16px; overflow-wrap: anywhere; }
+
+/* course modules */
+.learn { list-style: none; padding: 0; margin: 4px 0 26px; counter-reset: m; }
+.learn li { counter-increment: m; display: grid; grid-template-columns: 34px 1fr; column-gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.learn li::before { content: counter(m, decimal-leading-zero); grid-row: span 2; color: var(--gold); font-weight: 800; font-size: 14px; padding-top: 2px; }
+.learn b { font-weight: 700; }
+.learn span { color: var(--muted); font-size: 14px; }
+.course { align-items: start; }
+.course img { margin-top: 30px; }
+
+footer { background: #08090b; color: #7d8088; padding: 44px 0; font-size: 13px; border-top: 1px solid var(--line); }
+footer .logo { color: var(--text); }
+footer p { margin: 12px 0 0; max-width: 760px; }
+footer b { color: #b5b7bd; }
+footer a { color: var(--gold); }
+
+@media (max-width: 760px) {
+  .bar nav { display: none; }
+  section { padding: 60px 0; }
+  .hero .wrap { grid-template-columns: 1fr; padding-top: 44px; }
+  .hero .copy { padding-bottom: 0; }
+  .hero img { max-width: 220px; }
+  .eps, .picks, .calc, .about, .course, .contacts { grid-template-columns: 1fr; }
+  .calc .in { border-right: 0; border-bottom: 1px solid var(--line); }
+  .calc .in, .calc .out { padding: 22px; }
+  .course img { width: 110px; }
+  .btns .btn { flex: 1; }
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="logo" href="#">Grandpa<span>Disagrees</span></a>
+    <nav>
+      <a href="#about">Who is Frank</a>
+      <a href="#what">What he does</a>
+      <a href="#learn">Learn</a>
+      <a href="#contact-us">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="copy">
+      <span class="eyebrow">Money talk from an old rancher</span>
+      <h1>Son, sit down.<br><span class="box">Let's talk money.</span></h1>
+      <p>I'm Frank. Fifty years on a ranch, two recessions, one truck I should never have bought. Now I tell young folks the money truth nobody else will, with real numbers and no fancy talk.</p>
+      <div class="btns">
+        <a class="btn" href="#learn">Learn to make content</a>
+        <a class="btn alt" href="#contact-us">Contact</a>
+      </div>
+    </div>
+    <img src="img/frank_point.webp" alt="Frank, the grumpy rancher, pointing" width="420" height="523">
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap about">
+    <img src="img/frank_hips.webp" alt="Frank with hands on hips">
+    <div>
+      <div class="head"><h2>Who's this old man?</h2></div>
+      <p class="quote">"Everybody's telling you how to get rich. I'm telling you how to stop getting poor."</p>
+      <p>Frank is an old rancher from the American heartland. He learned about money the hard way: bad loans, lean years, and a few purchases he still regrets. Then he watched his grandson Tyler make the very same mistakes, just with shinier trucks and more apps on his phone.</p>
+      <p>So Frank started talking. Every story he tells is about one money habit that quietly keeps people broke, and what he'd do instead.</p>
+    </div>
+  </div>
+</section>
+
+<section id="what" class="cream">
+  <div class="wrap">
+    <div class="head"><h2>What Frank does</h2></div>
+    <p class="sub">Animated money stories for people who hate boring finance videos.</p>
+    <div class="picks">
+      <div class="pick card">
+        <div class="ico">🧮</div>
+        <h3>Runs the real numbers</h3>
+        <p class="why">Car payments, rent, takeout, houses. Frank does the math out loud and checks every figure against real sources.</p>
+      </div>
+      <div class="pick card">
+        <div class="ico">🤠</div>
+        <h3>Tells it like a grandpa</h3>
+        <p class="why">No charts and no jargon. Just a grumpy old man, his grandson, and a story you'll actually remember.</p>
+      </div>
+      <div class="pick card">
+        <div class="ico">🛠️</div>
+        <h3>Gives you a way out</h3>
+        <p class="why">Every story ends with a plain, simple plan you can start the same day. No get-rich-quick nonsense.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="learn">
+  <div class="wrap">
+    <div class="course card">
+      <img src="img/frank_up.webp" alt="Frank with his arms up">
+      <div>
+        <span class="tag">COURSE</span>
+        <h2 style="margin-top:14px">Learn to make content like this</h2>
+        <p>Want your own animated character channel? I'll show you the exact process behind Frank, step by step, even if you've never made a video before.</p>
+        <ul class="learn">
+          <li><b>Find the idea</b><span>Pick topics and titles that people actually click.</span></li>
+          <li><b>Write the script</b><span>Hooks, stories and pacing that keep viewers watching.</span></li>
+          <li><b>Build the character</b><span>Design and animate a cartoon like Frank, no drawing skills needed.</span></li>
+          <li><b>Voice and edit</b><span>Record, cut and add captions and sound like a pro.</span></li>
+          <li><b>Thumbnails and growth</b><span>Make thumbnails that get clicks and grow the channel.</span></li>
+        </ul>
+        <div class="btns">
+          <a class="btn" id="learnWa" href="#" target="_blank" rel="noopener">Ask about the course</a>
+          <a class="btn alt" id="learnMail" href="#">Email me</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact-us" class="cream">
+  <div class="wrap">
+    <div class="head"><h2>Contact us</h2></div>
+    <p class="sub">Sponsorships, collabs, course questions, or a money question for Frank? Reach out, we read everything.</p>
+    <div class="contacts">
+      <a class="contact card" id="cMail" href="#"><span class="ico">✉️</span><b>Email</b><span id="cMailT"></span></a>
+      <a class="contact card" id="cWa" href="#" target="_blank" rel="noopener"><span class="ico">💬</span><b>WhatsApp / Phone</b><span id="cWaT"></span></a>
+      <a class="contact card" id="cGh" href="#" target="_blank" rel="noopener"><span class="ico">💻</span><b>GitHub</b><span id="cGhT"></span></a>
+      <a class="contact card" id="cIg" href="#" target="_blank" rel="noopener"><span class="ico">📸</span><b>Instagram</b><span id="cIgT"></span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="#">Grandpa<span>Disagrees</span></a>
+    <p><b>Disclaimer:</b> Everything here is for education and entertainment, not financial advice. Frank is a cartoon, not your licensed advisor. Do your own research or talk to a professional before making money decisions.</p>
+    <p>© <span id="yr"></span> GrandpaDisagrees</p>
+  </div>
+</footer>
+
+<script>
+/* ===== EDIT HERE: all contact links live in this block ===== */
+const SITE = {
+  email: "mribtysam@gmail.com",
+  phone: "+923045474832",
+  github: "https://github.com/Ibtysam1",
+  instagram: "https://www.instagram.com/ibtysamafzal/",
+};
+/* =========================================================== */
+
+const $ = id => document.getElementById(id);
+const wa = "https://wa.me/" + SITE.phone.replace(/\D/g, "");
+
+$("yr").textContent = new Date().getFullYear();
+$("cMail").href = $("learnMail").href = "mailto:" + SITE.email;
+$("cMailT").textContent = SITE.email;
+$("cWa").href = wa;
+$("cWaT").textContent = SITE.phone;
+$("cGh").href = SITE.github;
+$("cGhT").textContent = SITE.github.replace("https://", "");
+$("cIg").href = SITE.instagram;
+$("cIgT").textContent = "@" + SITE.instagram.split("/").filter(Boolean).pop();
+$("learnWa").href = wa + "?text=" + encodeURIComponent("Hi! I want to learn how to make content like Grandpa Disagrees.");
+</script>
+</body>
+</html>
