@@ -139,7 +139,7 @@ input[type=range] { width: 100%; margin-top: 10px; accent-color: var(--gold); }
 .quote { font-weight: 700; font-size: 22px; line-height: 1.35; color: var(--text) !important; border-left: 3px solid var(--gold); padding-left: 18px; margin: 0 0 18px; letter-spacing: -0.01em; }
 
 /* contact */
-.contacts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.contacts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .contact { padding: 22px 24px; text-decoration: none; display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; column-gap: 16px; align-items: center; transition: border-color .2s, transform .2s; min-width: 0; }
 .contact:hover { border-color: var(--gold); transform: translateY(-2px); }
 .contact .ico { grid-row: span 2; font-size: 22px; width: 48px; height: 48px; display: grid; place-items: center; background: var(--card2); border: 1px solid var(--line); border-radius: 12px; }
@@ -272,7 +272,6 @@ footer a { color: var(--gold); }
       <a class="contact card" id="cMail" href="#"><span class="ico">✉️</span><b>Email</b><span id="cMailT"></span></a>
       <a class="contact card" id="cWa" href="#" target="_blank" rel="noopener"><span class="ico">💬</span><b>WhatsApp / Phone</b><span id="cWaT"></span></a>
       <a class="contact card" id="cGh" href="#" target="_blank" rel="noopener"><span class="ico">💻</span><b>GitHub</b><span id="cGhT"></span></a>
-      <a class="contact card" id="cIg" href="#" target="_blank" rel="noopener"><span class="ico">📸</span><b>Instagram</b><span id="cIgT"></span></a>
     </div>
   </div>
 </section>
@@ -291,7 +290,6 @@ const SITE = {
   email: "mribtysam@gmail.com",
   phone: "+923045474832",
   github: "https://github.com/Ibtysam1",
-  instagram: "https://www.instagram.com/ibtysamafzal/",
 };
 /* =========================================================== */
 
@@ -305,8 +303,6 @@ $("cWa").href = wa;
 $("cWaT").textContent = SITE.phone;
 $("cGh").href = SITE.github;
 $("cGhT").textContent = SITE.github.replace("https://", "");
-$("cIg").href = SITE.instagram;
-$("cIgT").textContent = "@" + SITE.instagram.split("/").filter(Boolean).pop();
 $("learnWa").href = wa + "?text=" + encodeURIComponent("Hi! I want to learn how to make content like Grandpa Disagrees.");
 </script>
 </body>
